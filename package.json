@@ -16,8 +16,9 @@
     "url": "https://github.com/dojo/themes.git"
   },
   "scripts": {
-    "build": "run-s clean build:dojo",
+    "build": "run-s clean build:dojo build:copy",
     "build:dojo": "dojo build theme -n dojo",
+    "build:copy": "shx cp -r ./src/dojo/fonts dist/src/dojo",
     "clean": "rimraf dist",
     "dojo-package": "dojo-package",
     "dojo-release": "dojo-release",
@@ -34,7 +35,7 @@
     "cpx": "1.5.0",
     "npm-run-all": "4.1.3",
     "rimraf": "2.6.2",
-    "shx": "0.3.2",
+    "shx": "^0.3.2",
     "typescript": "2.6.2"
   }
 }
